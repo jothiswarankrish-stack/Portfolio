@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jothishwaran.K | AI Full Stack Developer</title>
+  <!-- SEO & Social Sharing -->
+  <meta name="description" content="AI Full Stack Developer Portfolio of Jothishwaran.K - Chrome Extension Specialist, Consultant, and Freelancer.">
+  <meta property="og:title" content="Jothishwaran.K | AI Full Stack Developer" />
+  <meta property="og:description" content="Portfolio of Jothishwaran.K. I don’t just build software, I solve real-world problems." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-portfolio-url.com" />
+  <meta property="og:image" content="https://your-portfolio-url.com/avatar.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <style>
+    :root {
+      --bg: #0a0f1c;
+      --card: #111827;
+      --accent: #8b5cf6;
+      --accent-2: #06b6d4;
+      --text: #e6eef8;
+      --muted: #9fb3c8;
+      --transition: 0.4s cubic-bezier(.4,0,.2,1);
+    }
+    [data-theme="light"] {
+      --bg: #f8fafc;
+      --card: #e0e7ef;
+      --accent: #8b5cf6;
+      --accent-2: #06b6d4;
+      --text: #22223b;
+      --muted: #5c677d;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      scroll-behavior: smooth;
+      transition: background var(--transition), color var(--transition);
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(10, 15, 28, 0.85);
+      backdrop-filter: blur(10px);
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      transition: background var(--transition);
+    }
+    header h2 {
+      color: var(--accent-2);
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover, .theme-toggle:focus {
+      color: var(--accent-2);
+      outline: none;
+    }
+    .theme-toggle {
+      background: none;
+      border: none;
+      color: var(--accent-2);
+      font-size: 1.3rem;
+      cursor: pointer;
+      margin-left: 22px;
+      transition: color 0.3s;
+    }
+    section {
+      padding: 80px 10%;
+      min-height: auto;
+      animation: fadeIn 1s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      align-items: center;
+      gap: 40px;
+      padding-top: 100px;
+      min-height: 80vh;
+    }
+    .hero-text h1 {
+      font-size: 3.2rem;
+      margin-bottom: 10px;
+      animation: slideIn 1.2s cubic-bezier(.4,0,.2,1);
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-40px);}
+      to { opacity: 1; transform: translateX(0);}
+    }
+    .hero-text .typing {
+      color: var(--accent-2);
+      font-weight: bold;
+    }
+    .hero-text p.lead {
+      color: var(--muted);
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 600px;
+      animation: fadeIn 2s;
+    }
+    .panel {
+      background: var(--card);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: background var(--transition);
+    }
+    .profile-card {
+      text-align: center;
+    }
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      font-weight: 800;
+      color: white;
+      margin: 0 auto 15px;
+      box-shadow: 0 10px 40px rgba(139, 92, 246, 0.2);
+      transition: box-shadow var(--transition);
+    }
+    .profile-card h4 { margin: 0 0 5px 0; font-size: 1.2rem; }
+    .profile-card p { margin: 0 0 10px 0; color: var(--muted); }
+    .socials a {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      margin: 5px;
+      font-size: 0.9rem;
+      transition: background 0.3s, color 0.3s;
+    }
+    .socials a:hover {
+      background: var(--accent);
+      color: white;
+    }
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: var(--accent);
+      text-align: center;
+    }
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+    .badge {
+      padding: 10px 20px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #1e1b4b, #312e81);
+      border: 1px solid var(--accent);
+      color: var(--text);
+      font-size: 14px;
+      cursor: default;
+      transition: all var(--transition);
+      box-shadow: 0 2px 8px rgba(139, 92, 246, 0.07);
+    }
+    .badge:hover {
+      transform: translateY(-5px) scale(1.04);
+      box-shadow: 0 0 15px var(--accent-2);
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+    .card-3d {
+      background: var(--card);
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 25px;
+      transition: all var(--transition);
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(8, 8, 8, 0.04);
+    }
+    .card-3d:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
+    }
+    .card-3d h4 { margin: 0 0 10px 0; color: var(--accent-2); }
+    .card-3d p { color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+    .tech-used {
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-top: 15px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 600px;
+      margin: auto;
+    }
+    input, textarea {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      outline: none;
+      background: #1f2937;
+      color: var(--text);
+      font-size: 1rem;
+      transition: background var(--transition), color var(--transition);
+    }
+    [data-theme="light"] input, [data-theme="light"] textarea {
+      background: #f3f6fb;
+      color: #22223b;
+    }
+    button.submit {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color: var(--text);
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: transform 0.3s;
+    }
+    button.submit:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      text-align: center;
+      padding: 20px 5%;
+      margin-top: 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      color: var(--muted);
+      font-size: 0.9rem;
+      background: transparent;
+    }
+      [data-theme="light"] .panel {
+          background: #f7faff;
+          border: 1px solid #dbeafe;
+      }
+
+      [data-theme="light"] .card-3d {
+          background: #ffffff;
+          border: 1px solid #c7d2fe;
+          box-shadow: 0 2px 10px rgba(139, 92, 246, 0.07);
+      }
+
+      [data-theme="light"] .badge {
+          background: linear-gradient(135deg, #ede9fe, #f0f9ff);
+          border: 1px solid #a5b4fc;
+          color: #312e81;
+          box-shadow: 0 2px 8px rgba(139, 92, 246, 0.05);
+      }
+
+      [data-theme="light"] input, [data-theme="light"] textarea {
+          background: #f3f6fb;
+          color: #22223b;
+          border: 1px solid #cbd5e1;
+      }
+
+      [data-theme="light"] button.submit {
+          color: #22223b;
+      }
+
+      [data-theme="light"] .avatar {
+          background: linear-gradient(135deg, #a5b4fc, #67e8f9);
+          color: #22223b;
+          box-shadow: 0 5px 20px #a5b4fc33;
+      }
+
+      [data-theme="light"] header {
+          background: rgba(255,255,255,0.85);
+          border-bottom: 1px solid #e5e7eb;
+      }
+    @media(max-width: 980px) {
+      .hero { grid-template-columns: 1fr; text-align: center; }
+      .hero-text p.lead { margin: 0 auto; }
+      .profile-card { order: -1; margin-bottom: 40px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Jothishwaran.K</h2>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#contact">Contact</a>
+      <button class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">&#9788;</button>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Hi, I'm <span class="typing"></span></h1>
+        <p class="lead">As an AI enthusiast, I’m passionate about learning, solving real-world problems responsibly, and turning ideas into innovative solutions.</p>
+      </div>
+      <aside class="panel profile-card">
+        <div class="avatar">JK</div>
+        <h4>Jothishwaran.K</h4>
+        <p>AI Full Stack Developer</p>
+        <div class="contact-info">
+          <p>📞 <a href="tel:+919489673814" style="color:var(--muted); text-decoration:none;">+91 9489673814</a></p>
+          <p>💌 <a href="mailto:jothiswarankrishnamurthy@gmail.com" style="color:var(--muted); text-decoration:none;">jothiswarankrishnamurthy@gmail.com</a></p>
+        </div>
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/jothiswaran28" target="_blank">LinkedIn</a>
+          <a href="#projects">View Projects</a>
+        </div>
+      </aside>
+    </section>
+    <section id="about" class="panel">
+      <h3>About Me</h3>
+      <p style="text-align:center; color: var(--muted); max-width: 700px; margin: 0 auto; line-height: 1.7;">
+       I’m an AI enthusiast with a strong passion for exploring new technologies and turning ideas into real-world solutions. I enjoy working with data — analyzing, visualizing, and uncovering insights that help people make smarter decisions and improve efficiency. Beyond just coding and analysis, I love experimenting, learning, and finding innovative ways to solve problems. My goal is to blend creativity with technology to build impactful solutions that drive growth, spark innovation, and make a real difference.
+      </p>
+    </section>
+    <section id="skills">
+      <h3>Skills</h3>
+      <div class="badges">
+        <div class="badge">HTML / CSS / JavaScript</div>
+        <div class="badge">Python / ML (basics)</div>
+        <div class="badge">C / C#</div>
+        <div class="badge">Chrome Extensions</div>
+        <div class="badge">Oracle SQL / Toad</div>
+        <div class="badge">MySQL</div>
+        <div class="badge">Power BI</div>
+        <div class="badge">Tableau</div>        <div class="badge">ASP.NET MVC</div>
+        <div class="badge">QA & Manual testing </div>
+      </div>
+    </section>
+    <section id="projects">
+      <h3>Projects</h3>
+      <div class="projects">
+        <div class="card-3d">
+          <div>
+            <h4>Terms Pro God (Chrome Ext)</h4>
+            <p>Analyzes Terms & Conditions, highlights risky clauses, and summarizes them in plain language to help users make informed decisions before accepting.</p>
+          </div>
+          <div class="tech-used">Tech: JavaScript, Chrome APIs, NLP</div>
+        </div>
+        <div class="card-3d">
+          <div>
+            <h4>Jo Tutorial Builder Pro (Chrome Ext)</h4>
+            <p>Captures user flows and auto-generates step-by-step tutorials with annotations and export options, streamlining documentation for trainers.</p>
+          </div>
+          <div class="tech-used">Tech: JavaScript, Chrome APIs, DOM Capture</div>
+        </div>
+        <div class="card-3d">
+          <div>
+            <h4>IoT Smart Farming (ML)</h4>
+            <p>A smart farming solution using IoT for data collection and ML for disease analysis, optimizing crop health and yield.</p>
+          </div>
+          <div class="tech-used">Tech: Python, ML, IoT, ESP32</div>
+        </div>
+        <div class="card-3d">
+          <div>
+            <h4>Driver Drowsiness Detection</h4>
+            <p>An ML and IoT-based system to monitor driver alertness and prevent accidents by detecting signs of drowsiness.</p>
+          </div>
+          <div class="tech-used">Tech:IoT</div>
+        </div>
+        <div class="card-3d">
+          <div>
+            <h4>Client E-commerce Website</h4>
+            <p>Delivered a fully responsive e-commerce site with payment integration, an admin CMS, and optimized checkout flow to improve conversion rates.</p>
+          </div>
+          <div class="tech-used">Tech:HTML,CSS,JS</div>
+        </div>
+        <div class="card-3d">
+          <div>
+            <h4>Client & Personal Portfolio Websites</h4>
+            <p>
+Built and deployed portfolio websites for myself and friends, focusing on modern design, responsive layouts, and optimized performance.</p>
+          </div>
+          <div class="tech-used">Tech: HTML, CSS, JavaScript</div>
+        </div>
+      </div>
+    </section>
+    <section id="achievements">
+      <h3>Achievements & Timeline</h3>
+      <div class="badges" style="margin-bottom: 40px;">
+        <div class="badge">🏆 Best Student Award (2021-22)</div>
+        <div class="badge">🏅 Best IoT Trainer Award (2021-22)</div>
+        <div class="badge">🚀 Built 2 Chrome Extensions — waiting for launch</div>
+        <div class="badge">🌐 Delivered 2 Client Websites</div>
+        <div class="badge">💡 Smart Farming with ML & IoT</div>
+        <div class="badge">🚌 Ideathon Paper on Bus Tracking System</div>
+      </div>
+      <div style="max-width: 500px; margin: auto; color: var(--muted);">
+        <p><strong>2024:</strong> Delivered 2 client websites; active freelancing & consulting.</p>
+        <p><strong>2023:</strong> Built Terms Pro God & Jo Tutorial Builder Pro.</p>
+        <p><strong>2022:</strong> Graduated BE (CSE) from Arunai Engineering College, Anna University.</p>
+        <p><strong>2021-22:</strong> Received Best Student & Best IoT Trainer Awards.</p>
+      </div>
+    </section>
+    <section id="contact" class="panel">
+      <h3>Contact Me</h3>
+      <p style="text-align: center; color: var(--muted); margin-top: -20px; margin-bottom: 30px;">Available for freelancing, consulting, and full-time roles. Let's build something great together.</p>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit" class="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>Designed & Built by Jothishwaran.K</p>
+  </footer>
+  <script>
+    // Typing animation
+    const texts = ["an AI Full Stack Developer", "a Freelancer", "a Consultant", "a QA Analyst", "a Chrome Extension Specialist", "a Real-Life Problem Solver"];
+    let count = 0, index = 0, currentText = "", letter = "";
+    (function type() {
+      if (count === texts.length) { count = 0; }
+      currentText = texts[count];
+      letter = currentText.slice(0, ++index);
+      document.querySelector(".typing").textContent = letter;
+      if (letter.length === currentText.length) {
+        count++;
+        index = 0;
+        setTimeout(type, 2000);
+      } else {
+        setTimeout(type, 100);
+      }
+    }());
+
+    // Dark/Light theme toggle
+    const themeBtn = document.querySelector('.theme-toggle');
+    const root = document.documentElement;
+    let darkMode = true;
+
+    function setTheme(mode) {
+      if (mode === 'light') {
+        document.body.setAttribute('data-theme', 'light');
+        themeBtn.innerHTML = '&#9790;'; // Moon icon
+        darkMode = false;
+      } else {
+        document.body.removeAttribute('data-theme');
+        themeBtn.innerHTML = '&#9788;'; // Sun icon
+        darkMode = true;
+      }
+      localStorage.setItem('theme', mode);
+    }
+
+    // Load theme preference
+    const userTheme = localStorage.getItem('theme');
+    if (userTheme === 'light') setTheme('light');
+    else setTheme('dark');
+
+    themeBtn.addEventListener('click', () => {
+      setTheme(darkMode ? 'light' : 'dark');
+    });
+  </script>
+</body>
+</html>
